@@ -1,0 +1,38 @@
+---
+import "../styles/global.css";
+import Switch from "../components/Switch.astro";
+---
+
+<div class="layout">
+  <main class="header">
+    <h1>mzml</h1>
+    <div class="switch">
+      <Switch />
+    </div>
+  </main>
+</div>
+
+<style>
+  .layout {
+    width: 100vw;
+    height: 100vh;
+    justify-content: center;
+    display: flex;
+  }
+  .header {
+    /* background-color: #fff; */
+    width: 85ch;
+    position: fixed;
+    padding: 1rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    column-gap: 1.5rem;
+    row-gap: 0.5rem;
+  }
+  /* .switch { */
+  /*   width: 3rem; */
+  /*   height: 1.5rem; */
+  /* } */
+</style>
