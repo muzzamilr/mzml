@@ -5,7 +5,7 @@ import Switch from "../components/Switch.astro";
 
 <div class="layout">
   <main class="header">
-    <h1>mzml</h1>
+    <h1 class="heading">mzml</h1>
     <div class="switch">
       <Switch />
     </div>
@@ -30,6 +30,11 @@ import Switch from "../components/Switch.astro";
     align-items: center;
     column-gap: 1.5rem;
     row-gap: 0.5rem;
+  }
+  .heading {
+    -webkit-user-select: none; /* Safari */
+    -ms-user-select: none; /* IE 10 and IE 11 */
+    user-select: none; /* Standard syntax */
   }
   /* .switch { */
   /*   width: 3rem; */

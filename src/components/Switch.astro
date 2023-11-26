@@ -48,14 +48,18 @@
     }
       return 'light';
   })();
+
   if (theme === 'light') {
     document.documentElement.classList.remove('dark');
+  document.getElementById("darkmode-toggle").checked = false;
   } else {
     document.documentElement.classList.add('dark');
+  document.getElementById("darkmode-toggle").checked = true;
   }
   window.localStorage.setItem('theme', theme);
 
-  const handleToggleClick = () => {
+  const handleToggleClick = (e) => {
+    e.preventDefault()
     const element = document.documentElement;
     element.classList.toggle("dark");
     const isDark = element.classList.contains("dark");
