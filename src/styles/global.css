@@ -90,7 +90,7 @@ a {
   column-gap: 1.5rem;
   row-gap: 0.5rem;
   max-width: var(--maxContentWidth);
-  padding: 0.8rem max(calc((100vw - var(--maxContentWidth)) / 2), 1rem);
+  padding: 2rem max(calc((100vw - var(--maxContentWidth)) / 2), 1rem);
   background-color: inherit;
   transition: box-shadow 0.3s ease;
 
