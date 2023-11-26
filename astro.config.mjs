@@ -4,5 +4,5 @@ import { defineConfig } from "astro/config";
 export default defineConfig({
 	site: "https://mzml.me",
 	base: "/mzml",
-	compressHTML: true,
+	// compressHTML: true,
 });
