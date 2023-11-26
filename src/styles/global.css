@@ -1,5 +1,5 @@
 :root {
-
+  --blinkColor: black
 }
 
 
@@ -22,12 +22,14 @@ html.light{
   /* light theme styles */
   background-color: white;
   color: black;
+  --blinkColor: black 
 }
 
 html.dark {
   /* dark theme styles */
   background-color: black;
   color: white;
+  --blinkColor: white
 }
 body {
   font-family: 'Inter', sans-serif;
