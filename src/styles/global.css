@@ -2,34 +2,32 @@
   --blinkColor: black;
   --maxContentWidth: 85ch;
   --backgroundColorDark: #111111;
-  --backgroundColorLight: #FFFFFF;
+  --backgroundColorLight: #ffffff;
   --backgroundColor: var(--backgroundColorLight);
   --textColorLight: #585757;
-  --textColorDark: #B8B8B8;
+  --textColorDark: #b8b8b8;
   --selectionColorDark: #003666;
-  --selectionColorLight: #A3D2FF;
+  --selectionColorLight: #a3d2ff;
   --selectionColor: var(--selectionColorLight);
   --shadow: #161b3d1a;
 }
 
-
 @font-face {
-	font-family: 'Inter';
-	src: url('/fonts/Inter-Regular.ttf') format('ttf');
-	font-weight: 400;
-	font-style: normal;
-	font-display: swap;
+  font-family: "Inter";
+  src: url("/fonts/Inter-Regular.ttf") format("ttf");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
 }
 @font-face {
-	font-family: 'Inter';
-	src: url('/fonts/Inter-Bold.ttf') format('ttf');
-	font-weight: 700;
-	font-style: normal;
-	font-display: swap;
+  font-family: "Inter";
+  src: url("/fonts/Inter-Bold.ttf") format("ttf");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
 }
 
-
-html.light{
+html.light {
   /* light theme styles */
   background-color: var(--backgroundColorLight);
   --backgroundColor: var(--backgroundColorLight);
@@ -47,7 +45,6 @@ html.dark {
   --selectionColor: var(--selectionColorDark);
 }
 
-
 * {
   margin: 0;
   &::selection {
@@ -56,7 +53,7 @@ html.dark {
 }
 
 body {
-  font-family: 'Inter', sans-serif;
+  font-family: "Inter", sans-serif;
   font-size: 16px;
   margin: 0;
   padding: 0;
@@ -67,19 +64,19 @@ body {
   text-size-adjust: none;
   -webkit-text-size-adjust: none;
   -webkit-font-smoothing: antialiased;
-  -ms-overflow-style: none;  /* IE and Edge */
-  scrollbar-width: none; 
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none;
   &::-webkit-scrollbar {
-    display: none
+    display: none;
   }
 }
 
 a {
   color: var(--blinkColor);
-  font-weight: 600
+  font-weight: 600;
 }
 
-  header {
+header {
   z-index: 5;
   position: fixed;
   inset: 0 0 auto 0;
@@ -94,9 +91,9 @@ a {
   background-color: inherit;
   transition: box-shadow 0.3s ease;
 
-    -webkit-user-select: none; /* Safari */
-    -ms-user-select: none; /* IE 10 and IE 11 */
-    user-select: none; /* Standard syntax */
+  -webkit-user-select: none; /* Safari */
+  -ms-user-select: none; /* IE 10 and IE 11 */
+  user-select: none; /* Standard syntax */
   &.elevated {
     box-shadow: 0 2px 5px 1px var(--shadow);
     backdrop-filter: blur(5px);
@@ -111,64 +108,63 @@ main {
   row-gap: 1.6rem;
 }
 
+.blinking-cursor {
+  font-weight: 100;
+  font-size: 30px;
+  color: #2e3d48;
+  -webkit-animation: 1s blink step-end infinite;
+  -moz-animation: 1s blink step-end infinite;
+  -ms-animation: 1s blink step-end infinite;
+  -o-animation: 1s blink step-end infinite;
+  animation: 1s blink step-end infinite;
+}
 
-  .blinking-cursor {
-    font-weight: 100;
-    font-size: 30px;
-    color: #2e3d48;
-    -webkit-animation: 1s blink step-end infinite;
-    -moz-animation: 1s blink step-end infinite;
-    -ms-animation: 1s blink step-end infinite;
-    -o-animation: 1s blink step-end infinite;
-    animation: 1s blink step-end infinite;
+@keyframes "blink" {
+  from,
+  to {
+    color: transparent;
   }
+  50% {
+    color: var(--blinkCursor);
+  }
+}
 
-  @keyframes "blink" {
-    from,
-    to {
-      color: transparent;
-    }
-    50% {
-      color: var(--blinkCursor);
-    }
+@-moz-keyframes blink {
+  from,
+  to {
+    color: transparent;
   }
+  50% {
+    color: var(--blinkCursor);
+  }
+}
 
-  @-moz-keyframes blink {
-    from,
-    to {
-      color: transparent;
-    }
-    50% {
-      color: var(--blinkCursor);
-    }
+@-webkit-keyframes "blink" {
+  from,
+  to {
+    color: transparent;
   }
+  50% {
+    color: var(--blinkCursor);
+  }
+}
 
-  @-webkit-keyframes "blink" {
-    from,
-    to {
-      color: transparent;
-    }
-    50% {
-      color: var(--blinkCursor);
-    }
+@-ms-keyframes "blink" {
+  from,
+  to {
+    color: transparent;
   }
+  50% {
+    color: var(--blinkCursor);
+  }
+}
 
-  @-ms-keyframes "blink" {
-    from,
-    to {
-      color: transparent;
-    }
-    50% {
-      color: var(--blinkCursor);
-    }
+@-o-keyframes "blink" {
+  from,
+  to {
+    color: transparent;
   }
-
-  @-o-keyframes "blink" {
-    from,
-    to {
-      color: transparent;
-    }
-    50% {
-      color: var(--blinkCursor);
-    }
+  50% {
+    color: var(--blinkCursor);
   }
+}
