@@ -1,8 +1,12 @@
 :root {
   --blinkColor: black;
   --maxContentWidth: 85ch;
-  --backgroundColorDark: #111111;
-  --backgroundColorLight: #ffffff;
+  /* --backgroundColorDark: #111111; */
+
+  --backgroundColorDark: #1d222a;
+  /* --backgroundColorLight: #ffffff; */
+  --backgroundColorLight: #f7f9fc;
+
   --backgroundColor: var(--backgroundColorLight);
   --textColorLight: #585757;
   --textColorDark: #b8b8b8;
@@ -10,6 +14,33 @@
   --selectionColorLight: #a3d2ff;
   --selectionColor: var(--selectionColorLight);
   --shadow: #161b3d1a;
+
+
+  --shadow-color: 217deg 13% 61%;
+
+  --shadow-color-dark: 217deg 29% 4%;
+
+  --shadow-color-light: 217deg 13% 61%;
+
+  --shadow-elevation-low:
+    0px 0.5px 0.6px hsl(var(--shadow-color) / 0.34),
+    0px 0.8px 0.9px -1.2px hsl(var(--shadow-color) / 0.34),
+    0px 2px 2.3px -2.5px hsl(var(--shadow-color) / 0.34);
+  --shadow-elevation-medium:
+    0px 0.5px 0.6px hsl(var(--shadow-color) / 0.36),
+    0px 1.6px 1.8px -0.8px hsl(var(--shadow-color) / 0.36),
+    0.1px 4.1px 4.6px -1.7px hsl(var(--shadow-color) / 0.36),
+    0.2px 9.9px 11.1px -2.5px hsl(var(--shadow-color) / 0.36);
+  --shadow-elevation-high:
+    0px 0.5px 0.6px hsl(var(--shadow-color) / 0.34),
+    0.1px 2.9px 3.3px -0.4px hsl(var(--shadow-color) / 0.34),
+    0.1px 5.4px 6.1px -0.7px hsl(var(--shadow-color) / 0.34),
+    0.2px 8.9px 10px -1.1px hsl(var(--shadow-color) / 0.34),
+    0.3px 14.2px 16px -1.4px hsl(var(--shadow-color) / 0.34),
+    0.4px 22.1px 24.9px -1.8px hsl(var(--shadow-color) / 0.34),
+    0.6px 33.6px 37.8px -2.1px hsl(var(--shadow-color) / 0.34),
+    0.9px 49.5px 55.7px -2.5px hsl(var(--shadow-color) / 0.34);
+
 }
 
 @font-face {
@@ -19,6 +50,7 @@
   font-style: normal;
   font-display: swap;
 }
+
 @font-face {
   font-family: "Inter";
   src: url("/fonts/Inter-Bold.ttf") format("ttf");
@@ -34,6 +66,7 @@ html.light {
   color: var(--textColorLight);
   --blinkColor: var(--textColorLight);
   --selectionColor: var(--selectionColorLight);
+  --shadow-color: var(--shadow-color-light)
 }
 
 html.dark {
@@ -43,10 +76,12 @@ html.dark {
   color: var(--textColorDark);
   --blinkColor: var(--textColorDark);
   --selectionColor: var(--selectionColorDark);
+  --shadow-color: var(--shadow-color-dark)
 }
 
 * {
   margin: 0;
+
   &::selection {
     background-color: var(--selectionColor);
   }
@@ -64,8 +99,10 @@ body {
   text-size-adjust: none;
   -webkit-text-size-adjust: none;
   -webkit-font-smoothing: antialiased;
-  -ms-overflow-style: none; /* IE and Edge */
+  -ms-overflow-style: none;
+  /* IE and Edge */
   scrollbar-width: none;
+
   &::-webkit-scrollbar {
     display: none;
   }
@@ -73,7 +110,18 @@ body {
 
 a {
   color: var(--blinkColor);
+  cursor: pointer;
   font-weight: 600;
+  transition: opacity 0.3s;
+  text-decoration: none;
+
+  &:hover {
+    opacity: 0.75;
+  }
+
+  &:active {
+    opacity: 0.5;
+  }
 }
 
 header {
@@ -91,14 +139,24 @@ header {
   background-color: inherit;
   transition: box-shadow 0.3s ease;
 
-  -webkit-user-select: none; /* Safari */
-  -ms-user-select: none; /* IE 10 and IE 11 */
-  user-select: none; /* Standard syntax */
+  -webkit-user-select: none;
+  /* Safari */
+  -ms-user-select: none;
+  /* IE 10 and IE 11 */
+  user-select: none;
+
+  @media screen and (max-width:576px) {
+    padding: 1rem max(calc((100vw - var(--maxContentWidth)) / 2), 1rem);
+  }
+
+  /* Standard syntax */
   &.elevated {
-    box-shadow: 0 2px 5px 1px var(--shadow);
+    /* box-shadow: 0 2px 5px 1px var(--shadow); */
+    box-shadow: var(--shadow-elevation-medium);
     backdrop-filter: blur(5px);
   }
 }
+
 main {
   max-width: var(--maxContentWidth);
   padding: 10rem max(calc((100vw - var(--maxContentWidth)) / 2), 1rem);
@@ -106,6 +164,11 @@ main {
   display: flex;
   flex-direction: column;
   row-gap: 1.6rem;
+
+  @media screen and (max-width:576px) {
+    padding: 8rem max(calc((100vw - var(--maxContentWidth)) / 2), 1rem);
+    padding-bottom: 2rem;
+  }
 }
 
 .blinking-cursor {
@@ -120,50 +183,60 @@ main {
 }
 
 @keyframes "blink" {
+
   from,
   to {
     color: transparent;
   }
+
   50% {
     color: var(--blinkCursor);
   }
 }
 
 @-moz-keyframes blink {
+
   from,
   to {
     color: transparent;
   }
+
   50% {
     color: var(--blinkCursor);
   }
 }
 
 @-webkit-keyframes "blink" {
+
   from,
   to {
     color: transparent;
   }
+
   50% {
     color: var(--blinkCursor);
   }
 }
 
 @-ms-keyframes "blink" {
+
   from,
   to {
     color: transparent;
   }
+
   50% {
     color: var(--blinkCursor);
   }
 }
 
 @-o-keyframes "blink" {
+
   from,
   to {
     color: transparent;
   }
+
   50% {
     color: var(--blinkCursor);
   }

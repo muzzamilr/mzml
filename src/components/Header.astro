@@ -1,18 +1,30 @@
 ---
-import Switch from "./Switch.astro";
+import ThemeSwitch from "./ThemeSwitch.astro";
 ---
 
 <header>
   <h1>
-    <a href="/">mzml</a><span class="blinking-cursor">_</span>
+    <a href="/">mzml<span class="blinking-cursor">_</span></a>
   </h1>
-  <Switch />
+  <ThemeSwitch />
 </header>
+<div id="intersecter"></div>
+<script>
+  let setup = () => {
+    let i = document.getElementById("intersecter")!;
+    let t = document.querySelector("header")!;
+    new IntersectionObserver(([i]) =>
+      t.classList.toggle("elevated", !i.isIntersecting),
+    ).observe(i);
+  };
+
+  ["interactive", "complete"].includes(document.readyState)
+    ? setup()
+    : document.addEventListener("DOMContentLoaded", setup);
+</script>
 <style>
   a {
-    display: inline-block;
-    line-height: 1;
-    text-decoration: none;
     font-size: 2.5rem;
+    font-weight: 600;
   }
 </style>
