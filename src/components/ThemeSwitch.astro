@@ -152,8 +152,8 @@
 
 <style>
   label {
-    width: 6rem;
-    height: 3rem;
+    width: 5rem;
+    height: 2.5rem;
     position: relative;
     display: block;
     /* background: var(--backgroundColorLigth); */
@@ -175,10 +175,10 @@
   }
   label:after {
     content: "";
-    width: 2rem;
-    height: 2rem;
+    width: 1.75rem;
+    height: 1.75rem;
     position: absolute;
-    top: 0.5rem;
+    top: 0.4rem;
     left: 0.5rem;
     background: linear-gradient(180deg, #ffcc89, #d8860b);
     border-radius: 2rem;
@@ -196,12 +196,12 @@
     border: 1px solid var(--textColorDark);
   }
   input:checked + label:after {
-    left: 5.5rem;
+    left: 4.5rem;
     transform: translateX(-100%);
     background: linear-gradient(180deg, #777, #3a3a3a);
   }
   label:active:after {
-    width: 4rem;
+    width: 3.5rem;
   }
   input:checked + label + .background {
     background: #242424;
@@ -209,16 +209,16 @@
   label svg {
     position: absolute;
     width: 1rem;
-    top: 1rem;
+    top: 0.75rem;
     z-index: 100;
   }
   label svg.sun {
-    left: 1rem;
+    left: 0.9rem;
     fill: #fff;
     transition: 0.3s;
   }
   label svg.moon {
-    left: 4rem;
+    left: 3.25rem;
     fill: #7e7e7e;
     transition: 0.3s;
   }
