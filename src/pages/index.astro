@@ -2,8 +2,23 @@
 import "../styles/global.css";
 import Layout from "../layouts/Layout.astro";
 import Hero from "../components/Hero.astro";
+import ProjectList from "../components/ProjectList.astro";
+import { WORK } from "../shared/constants";
 ---
 
 <Layout>
   <Hero />
+
+  <hr class="divider" />
+
+  <ProjectList label="Selected Work" items={WORK} />
 </Layout>
+
+<style>
+  .divider {
+    border: none;
+    border-top: 1px solid var(--divider);
+    width: 60px;
+    margin: 3rem auto;
+  }
+</style>

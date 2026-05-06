@@ -1,0 +1,37 @@
+---
+import type { Project } from "../shared/constants";
+import ProjectItem from "./Project.astro";
+
+interface Props {
+  label: string;
+  items: readonly Project[];
+}
+
+const { label, items } = Astro.props;
+---
+
+<section class="project-list">
+  <div class="label">{label}</div>
+  <div class="items">
+    {items.map((project, i) => <ProjectItem project={project} index={i} />)}
+  </div>
+</section>
+
+<style>
+  .project-list {
+    width: 100%;
+  }
+  .label {
+    font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+    font-size: 0.72rem;
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    color: var(--textLabel);
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+  .items {
+    max-width: 1080px;
+    margin: 0 auto;
+  }
+</style>
