@@ -1,12 +1,23 @@
 ---
 import ThemeSwitch from "./ThemeSwitch.astro";
+
+// Keep the import alive for tooling; render is intentionally disabled below.
+void ThemeSwitch;
 ---
 
 <header>
   <h1>
     <a href="/">mzml<span class="blinking-cursor">_</span></a>
   </h1>
-  <ThemeSwitch />
+  <nav class="nav">
+    <a href="/Muzzamil-Resume.pdf" target="_blank" rel="noopener">resume</a>
+    <!--
+      Theme switch is intentionally hidden for now.
+      Re-enable by uncommenting the line below.
+      The component file (ThemeSwitch.astro) is kept in source.
+    -->
+    <!-- <ThemeSwitch /> -->
+  </nav>
 </header>
 <div id="intersecter"></div>
 <script>
@@ -26,5 +37,15 @@ import ThemeSwitch from "./ThemeSwitch.astro";
   a {
     font-size: 2rem;
     font-weight: 600;
+  }
+  .nav {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+  }
+  .nav a {
+    font-size: 0.95rem;
+    font-weight: 500;
+    border-bottom: 1px solid var(--underline);
   }
 </style>
