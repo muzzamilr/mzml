@@ -1,51 +1,9 @@
 ---
 import "../styles/global.css";
 import Layout from "../layouts/Layout.astro";
+import Hero from "../components/Hero.astro";
 ---
 
 <Layout>
-  <p>
-    Hello! I'm Muzzamil, a passionate software engineer currently shaping
-    digital experiences at <a href="https://www.carbonteq.com" target="_blank"
-      >Carbonteq</a
-    >. Beyond the lines of code, I'm a seeker of challenges and a proud
-    contributor to this innovation powerhouse.
-  </p>
-  <p>
-    I specialize in the dynamic realm of the JavaScript/TypeScript ecosystem,
-    thriving on crafting seamless web solutions. My passion extends beyond the
-    confines of office work; I channel my creativity into working on intriguing
-    hobby projects, with a particular fondness for Rust.
-  </p>
-  <p>
-    My interests go far beyond the screen; I'm a fervent explorer of science,
-    art, poetry, music, and philosophy. Exploring these realms fuels my
-    curiosity and keeps me inspired.
-  </p>
-  <p>
-    You can find my resume <a href="/Muzzamil-Resume.pdf" target="_blank"
-      >here</a
-    >. If you want to connect, drop me an email at <a href="mailto:hi@mzml.me"
-      >hi@mzml.me</a
-    >.
-  </p>
-  <div class="accounts">
-    <a href="https://github.com/muzzamilr" target="_blank">GitHub</a>
-    <a href="https://linkedin.com/in/muzzamilraza" target="_blank">LinkedIn</a>
-  </div>
+  <Hero />
 </Layout>
-
-<style>
-  p {
-    margin: 0;
-    font-size: 1.2rem;
-    font-weight: 400;
-    line-height: 1.75rem;
-  }
-  .accounts {
-    display: flex;
-    gap: 1rem;
-    justify-content: end;
-    margin-top: 2.5rem;
-  }
-</style>

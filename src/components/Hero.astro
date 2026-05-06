@@ -1,0 +1,59 @@
+---
+// Centered text hero: name + two-sentence bio + inline contact links.
+// No photo, no phonetic — see the design spec for rationale.
+---
+
+<section class="hero">
+  <h1>Muzzamil Raza</h1>
+  <p class="bio">
+    Software engineer. I build products and untangle the hard parts. Drawn to
+    the kind of work where the constraints are real and the answers aren't
+    obvious.
+  </p>
+  <div class="links">
+    <a href="mailto:hi@mzml.me">email</a>
+    <a href="https://github.com/muzzamilr" target="_blank" rel="noopener">github</a>
+    <a href="https://linkedin.com/in/muzzamilraza" target="_blank" rel="noopener">linkedin</a>
+  </div>
+</section>
+
+<style>
+  .hero {
+    text-align: center;
+    margin: 0 auto;
+    max-width: 60ch;
+  }
+  .hero h1 {
+    font-size: 2.6rem;
+    font-weight: 700;
+    margin: 0;
+    letter-spacing: -0.015em;
+    line-height: 1.1;
+  }
+  .hero .bio {
+    font-size: 1.05rem;
+    margin: 1.25rem auto 0 auto;
+    max-width: 52ch;
+    line-height: 1.65;
+  }
+  .hero .links {
+    margin-top: 1.5rem;
+    display: flex;
+    justify-content: center;
+    gap: 1.25rem;
+    flex-wrap: wrap;
+    font-size: 0.9rem;
+  }
+  .hero .links a {
+    border-bottom: 1px solid var(--underline);
+  }
+
+  @media (max-width: 576px) {
+    .hero h1 {
+      font-size: 2.1rem;
+    }
+    .hero .bio {
+      font-size: 1rem;
+    }
+  }
+</style>
