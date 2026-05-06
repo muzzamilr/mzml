@@ -3,7 +3,7 @@ import "../styles/global.css";
 import Layout from "../layouts/Layout.astro";
 import Hero from "../components/Hero.astro";
 import ProjectList from "../components/ProjectList.astro";
-import { WORK } from "../shared/constants";
+import { WORK, OPEN_SOURCE } from "../shared/constants";
 ---
 
 <Layout>
@@ -12,6 +12,14 @@ import { WORK } from "../shared/constants";
   <hr class="divider" />
 
   <ProjectList label="Selected Work" items={WORK} />
+
+  <hr class="divider" />
+
+  <ProjectList label="Open Source" items={OPEN_SOURCE} />
+
+  <footer class="page-footer">
+    — <a href="mailto:hi@mzml.me">hi@mzml.me</a> —
+  </footer>
 </Layout>
 
 <style>
@@ -20,5 +28,16 @@ import { WORK } from "../shared/constants";
     border-top: 1px solid var(--divider);
     width: 60px;
     margin: 3rem auto;
+  }
+  .page-footer {
+    text-align: center;
+    margin-top: 3.5rem;
+    font-size: 0.85rem;
+    color: var(--textMuted);
+  }
+  .page-footer a {
+    color: inherit;
+    text-decoration: none;
+    border-bottom: 1px solid var(--underline);
   }
 </style>
