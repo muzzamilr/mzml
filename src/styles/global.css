@@ -1,25 +1,45 @@
 :root {
   --blinkColor: black;
-  --maxContentWidth: 85ch;
-  /* --backgroundColorDark: #111111; */
+  --maxContentWidth: 1440px;
 
+  /* Light theme — warm cream + brown ink */
+  --backgroundColorLight: #fdfaf4;
+  --textColorLight: #2c2417;
+  --selectionColorLight: #e8dcb4;
+
+  /* Dark theme — preserved (used when the theme switch is re-enabled) */
   --backgroundColorDark: #1d222a;
-  /* --backgroundColorLight: #ffffff; */
-  --backgroundColorLight: #f7f9fc;
-
-  --backgroundColor: var(--backgroundColorLight);
-  --textColorLight: #585757;
   --textColorDark: #b8b8b8;
   --selectionColorDark: #003666;
-  --selectionColorLight: #a3d2ff;
+
+  /* Defaults: light */
+  --backgroundColor: var(--backgroundColorLight);
   --selectionColor: var(--selectionColorLight);
+
+  /* Marginalia / section accents — light theme */
+  --textMutedLight: #6f5d3b;
+  --textLabelLight: #8b7e5d;
+  --hairlineLight: #ece2c9;
+  --dividerLight: #d4c8a8;
+  --underlineLight: #c9bf9f;
+
+  /* Marginalia / section accents — dark theme (placeholders for when the switch is re-enabled) */
+  --textMutedDark: #a09478;
+  --textLabelDark: #8a8270;
+  --hairlineDark: #2a2f38;
+  --dividerDark: #3a4049;
+  --underlineDark: #5a6473;
+
+  /* Defaults: light */
+  --textMuted: var(--textMutedLight);
+  --textLabel: var(--textLabelLight);
+  --hairline: var(--hairlineLight);
+  --divider: var(--dividerLight);
+  --underline: var(--underlineLight);
+
   --shadow: #161b3d1a;
-
-
   --shadow-color: 217deg 13% 61%;
-
   --shadow-color-dark: 217deg 29% 4%;
-
   --shadow-color-light: 217deg 13% 61%;
 
   --shadow-elevation-low:
@@ -40,7 +60,6 @@
     0.4px 22.1px 24.9px -1.8px hsl(var(--shadow-color) / 0.34),
     0.6px 33.6px 37.8px -2.1px hsl(var(--shadow-color) / 0.34),
     0.9px 49.5px 55.7px -2.5px hsl(var(--shadow-color) / 0.34);
-
 }
 
 @font-face {
@@ -60,23 +79,31 @@
 }
 
 html.light {
-  /* light theme styles */
   background-color: var(--backgroundColorLight);
   --backgroundColor: var(--backgroundColorLight);
   color: var(--textColorLight);
   --blinkColor: var(--textColorLight);
   --selectionColor: var(--selectionColorLight);
-  --shadow-color: var(--shadow-color-light)
+  --shadow-color: var(--shadow-color-light);
+  --textMuted: var(--textMutedLight);
+  --textLabel: var(--textLabelLight);
+  --hairline: var(--hairlineLight);
+  --divider: var(--dividerLight);
+  --underline: var(--underlineLight);
 }
 
 html.dark {
-  /* dark theme styles */
   background-color: var(--backgroundColorDark);
   --backgroundColor: var(--backgroundColorDark);
   color: var(--textColorDark);
   --blinkColor: var(--textColorDark);
   --selectionColor: var(--selectionColorDark);
-  --shadow-color: var(--shadow-color-dark)
+  --shadow-color: var(--shadow-color-dark);
+  --textMuted: var(--textMutedDark);
+  --textLabel: var(--textLabelDark);
+  --hairline: var(--hairlineDark);
+  --divider: var(--dividerDark);
+  --underline: var(--underlineDark);
 }
 
 * {
@@ -90,6 +117,7 @@ html.dark {
 body {
   font-family: "Inter", sans-serif;
   font-size: 16px;
+  color: var(--textColorLight);
   margin: 0;
   padding: 0;
   scroll-behavior: smooth;
