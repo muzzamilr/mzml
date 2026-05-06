@@ -163,7 +163,7 @@ header {
   column-gap: 1.5rem;
   row-gap: 0.5rem;
   max-width: var(--maxContentWidth);
-  padding: 2rem max(calc((100vw - var(--maxContentWidth)) / 2), 1rem);
+  padding: 1rem max(calc((100vw - var(--maxContentWidth)) / 2), 1rem);
   background-color: inherit;
   transition: box-shadow 0.3s ease;
 
@@ -201,7 +201,7 @@ main {
 
 .blinking-cursor {
   font-weight: 100;
-  font-size: 30px;
+  /* font-size: 30px; */
   color: #2e3d48;
   -webkit-animation: 1s blink step-end infinite;
   -moz-animation: 1s blink step-end infinite;
